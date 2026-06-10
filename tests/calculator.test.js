@@ -30,11 +30,15 @@ test("cenário A calcula material, perda e preço final", () => {
 
 test("cenário B reverte liga e perda para encontrar o ouro necessário", () => {
   const result = calculateScenarioB(10, configuration);
+  const expectedGoldCost = result.gold * configuration.goldPrice;
+  const expectedLaborCost = result.finalWeight * configuration.laborPrice;
 
   assert.ok(Math.abs(result.gold - 8.865248226950355) < 1e-12);
   assert.ok(Math.abs(result.finalWeight - 10) < 1e-12);
   assert.ok(Math.abs(result.material * (1 - configuration.loss) - 10) < 1e-12);
-  assert.ok(Math.abs(result.finalPrice - 6119.148936170213) < 1e-10);
+  assert.ok(Math.abs(result.goldCost - expectedGoldCost) < 1e-10);
+  assert.ok(Math.abs(result.laborCost - expectedLaborCost) < 1e-10);
+  assert.ok(Math.abs(result.finalPrice - (expectedGoldCost + expectedLaborCost)) < 1e-10);
 });
 
 test("normalização remove duplicados, inválidos e ordena os pesos", () => {
