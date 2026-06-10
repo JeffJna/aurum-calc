@@ -9,7 +9,7 @@ const {
 } = require("../app.js");
 
 const configuration = {
-  goldPrice: 600,
+  goldPrice: 700,
   laborPrice: 80,
   loss: 0.06,
   alloy: 0.2
@@ -23,9 +23,9 @@ test("cenário A calcula material, perda e preço final", () => {
   assert.equal(result.material, 12);
   assert.equal(result.loss, 0.72);
   assert.equal(result.finalWeight, 11.28);
-  assert.equal(result.goldCost, 6000);
+  assert.equal(result.goldCost, 7000);
   assert.equal(result.laborCost, 902.4);
-  assert.equal(result.finalPrice, 6902.4);
+  assert.equal(result.finalPrice, 7902.4);
 });
 
 test("cenário B reverte liga e perda para encontrar o ouro necessário", () => {
@@ -47,7 +47,7 @@ test("normalização remove duplicados, inválidos e ordena os pesos", () => {
 test("validação aceita um estado completo", () => {
   assert.deepEqual(
     validateState({
-      precoOuro: "600",
+      precoOuro: "700",
       maoDeObra: "80",
       percentualPerda: "6",
       percentualLiga: "20",
@@ -55,7 +55,7 @@ test("validação aceita um estado completo", () => {
       pesos: ["15", "10"]
     }),
     {
-      precoOuro: 600,
+      precoOuro: 700,
       maoDeObra: 80,
       percentualPerda: 6,
       percentualLiga: 20,
@@ -78,7 +78,7 @@ test("validação rejeita perda de 100% e cenários desconhecidos", () => {
 });
 
 const DEFAULT_TEST_STATE = {
-  precoOuro: 600,
+  precoOuro: 700,
   maoDeObra: 80,
   percentualPerda: 6,
   percentualLiga: 20,

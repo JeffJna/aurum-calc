@@ -2,7 +2,7 @@
 
 const INITIAL_WEIGHTS = [10, 12, 15, 20, 25, 30, 35, 40, 45, 50, 55];
 const DEFAULT_STATE = Object.freeze({
-  precoOuro: 600,
+  precoOuro: 700,
   maoDeObra: 80,
   percentualPerda: 6,
   percentualLiga: 20,
