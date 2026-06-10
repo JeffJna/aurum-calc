@@ -1,0 +1,13 @@
+{
+  "name": "aurum-calc",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Calculadora estática de custos para fabricação de joias em ouro.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

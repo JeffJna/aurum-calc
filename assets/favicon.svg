@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="gold" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5dfa1"/>
+      <stop offset="1" stop-color="#b78327"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="32" fill="#11100e"/>
+  <circle cx="32" cy="32" r="25" fill="url(#gold)"/>
+  <text x="32" y="39" fill="#211a0d" font-family="Georgia, serif" font-size="21" font-weight="700" text-anchor="middle">Au</text>
+</svg>

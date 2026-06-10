@@ -1,29 +1,43 @@
-# Calculadora de Joias em Ouro
+# Aurum Calc
 
-Aplicação estática para simular o custo de fabricação de joias considerando ouro, liga, perda e mão de obra.
+Calculadora estática para estimar custos de fabricação de joias em ouro. A aplicação compara pesos e considera ouro, liga, perda de material e mão de obra em dois cenários:
 
-## Publicar no GitHub Pages
-
-1. Crie um repositório no GitHub.
-2. Coloque `index.html` e `.nojekyll` na raiz do repositório.
-3. Abra **Settings > Pages**.
-4. Em **Build and deployment**, selecione **Deploy from a branch**.
-5. Escolha a branch principal, a pasta `/ (root)` e salve.
-
-O endereço público será exibido pelo GitHub após a publicação.
+- ouro comprado para estimar o peso final;
+- peso final desejado para estimar o ouro necessário.
 
 ## Recursos
 
-- Dois cenários de cálculo
-- Pesos personalizados
-- Exportação CSV
-- Impressão e geração de PDF
-- Link compartilhável com os parâmetros da simulação
-- Salvamento automático no navegador
-- Layout responsivo
-- Sem backend ou bibliotecas externas
+- atualização automática dos cálculos;
+- pesos personalizados e comparação em tabela;
+- resumo de menor e maior orçamento;
+- exportação CSV e impressão em PDF;
+- link compartilhável com todos os parâmetros;
+- persistência local e tema claro/escuro;
+- layout responsivo e acessível;
+- funcionamento sem backend ou bibliotecas externas.
 
-## Uso local
+## Desenvolvimento local
 
-Abra `index.html` diretamente no navegador.
-# aurum-calc
+Abra `index.html` diretamente no navegador. Para servir por HTTP, use qualquer servidor estático, por exemplo:
+
+```powershell
+python -m http.server 8000
+```
+
+Depois acesse `http://localhost:8000`.
+
+## Testes
+
+Requer Node.js 20 ou superior.
+
+```powershell
+npm test
+```
+
+Os testes cobrem as fórmulas dos dois cenários, normalização de pesos e validação do estado salvo.
+
+## Publicação
+
+O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) executa os testes, monta um artefato apenas com os arquivos públicos e publica no GitHub Pages a cada push na branch `main`.
+
+No repositório do GitHub, configure **Settings > Pages > Build and deployment > Source** como **GitHub Actions**. Depois disso, cada push em `main` atualiza a página automaticamente.
